@@ -1,0 +1,60 @@
+{
+  "rows_in": 487680,
+  "series_in": 3810,
+  "dtypes_after": {
+    "sensor": "float32",
+    "ids": "int32",
+    "surface": "str"
+  },
+  "duplicate_rows_exact": 0,
+  "duplicate_keys": 0,
+  "duplicate_label_rows": 0,
+  "missing_sensor_values": 0,
+  "missing_labels": 0,
+  "series_dropped_missing": 0,
+  "series_dropped_incomplete": 0,
+  "duplicate_series": 0,
+  "quaternion_norm_min": 0.9999922513961792,
+  "quaternion_norm_max": 1.0000075101852417,
+  "quaternions_renormalised": 0,
+  "outlier_pct_robust_z_gt_6": {
+    "orientation_X": 0.0,
+    "orientation_Y": 0.0,
+    "orientation_Z": 0.0,
+    "orientation_W": 0.0,
+    "angular_velocity_X": 1.867,
+    "angular_velocity_Y": 0.153,
+    "angular_velocity_Z": 2.313,
+    "linear_acceleration_X": 1.582,
+    "linear_acceleration_Y": 0.566,
+    "linear_acceleration_Z": 3.031
+  },
+  "channel_min": {
+    "orientation_X": -0.9891006350517273,
+    "orientation_Y": -0.9896541833877563,
+    "orientation_Z": -0.16283057630062103,
+    "orientation_W": -0.15662072598934174,
+    "angular_velocity_X": -2.371000051498413,
+    "angular_velocity_Y": -0.9278600215911865,
+    "angular_velocity_Z": -1.2688000202178955,
+    "linear_acceleration_X": -36.06700134277344,
+    "linear_acceleration_Y": -121.48999786376953,
+    "linear_acceleration_Z": -75.38600158691406
+  },
+  "channel_max": {
+    "orientation_X": 0.989103376865387,
+    "orientation_Y": 0.9889844655990601,
+    "orientation_Z": 0.15571017563343048,
+    "orientation_W": 0.1547701060771942,
+    "angular_velocity_X": 2.2822000980377197,
+    "angular_velocity_Y": 1.0791000127792358,
+    "angular_velocity_Z": 1.3873000144958496,
+    "linear_acceleration_X": 36.797000885009766,
+    "linear_acceleration_Y": 73.00800323486328,
+    "linear_acceleration_Z": 65.83899688720703
+  },
+  "groups_with_multiple_surfaces": 0,
+  "series_out": 3810,
+  "groups": 73,
+  "rows_out": 487680
+}

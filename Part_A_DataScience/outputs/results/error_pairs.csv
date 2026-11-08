@@ -1,0 +1,6 @@
+true,pred,count
+Firm,Compliant,110
+Compliant,Firm,69
+Irregular,Firm,31
+Irregular,Compliant,26
+Firm,Irregular,14

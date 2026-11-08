@@ -1,0 +1,5 @@
+features,protocol,macro_f1,hazard_recall,accuracy
+engineered features (used in this project),naive random folds (LEAKY),0.7457720319133362,0.799475753604194,0.820734908136483
+engineered features (used in this project),session-grouped folds (correct),0.6518868744770764,0.6965923984272608,0.7540682414698163
+engineered + raw orientation (heading leaks the session),naive random folds (LEAKY),0.8737645382619891,0.8676277850589778,0.89501312335958
+engineered + raw orientation (heading leaks the session),session-grouped folds (correct),0.6567478184677893,0.6553079947575361,0.7661417322834646

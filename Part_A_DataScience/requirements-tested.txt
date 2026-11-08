@@ -1,0 +1,9 @@
+# Exact versions used to produce the numbers in REPORT.md (Python 3.12.3, Linux x86_64, CPU only)
+numpy==2.4.4
+pandas==3.0.2
+scipy==1.17.1
+scikit-learn==1.8.0
+matplotlib==3.10.8
+seaborn==0.13.2
+torch==2.15.0
+joblib==1.5.3

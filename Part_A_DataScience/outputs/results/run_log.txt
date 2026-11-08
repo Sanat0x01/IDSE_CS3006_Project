@@ -1,0 +1,34 @@
+=== Terrain-risk pipeline (seed=42) ===
+[1] data: 3810 windows x 128 steps x 10 channels, 73 sessions
+[2] session-level split (zero overlap asserted):
+        windows  sessions  Firm windows  Compliant windows  Irregular windows  Firm sessions  Compliant sessions  Irregular sessions
+train     2311        43          1374                731                206             26                  14                   3
+val        743        15           455                243                 45              9                   5                   1
+test       756        15           455                244                 57              9                   5                   1
+[3] EDA figures written to /home/claude/terrain_rover_project/outputs/figures
+[4] tuning (grouped CV on TRAIN sessions)
+   LogReg best: {'clf__C': 0.1}
+   RandomForest best: {'n_estimators': 200, 'min_samples_leaf': 3, 'max_features': 0.2, 'max_depth': 8}
+   CNN {'width': 16, 'dropout': 0.3, 'lr': 0.001}: macro-F1 0.662 +/- 0.034 hazard-recall 0.733  (35s)
+   CNN {'width': 16, 'dropout': 0.3, 'lr': 0.003}: macro-F1 0.668 +/- 0.023 hazard-recall 0.700  (31s)
+   CNN {'width': 16, 'dropout': 0.5, 'lr': 0.001}: macro-F1 0.655 +/- 0.042 hazard-recall 0.736  (28s)
+   CNN {'width': 16, 'dropout': 0.5, 'lr': 0.003}: macro-F1 0.675 +/- 0.045 hazard-recall 0.704  (29s)
+   CNN {'width': 32, 'dropout': 0.3, 'lr': 0.001}: macro-F1 0.655 +/- 0.036 hazard-recall 0.655  (63s)
+   CNN {'width': 32, 'dropout': 0.3, 'lr': 0.003}: macro-F1 0.662 +/- 0.030 hazard-recall 0.633  (59s)
+   CNN {'width': 32, 'dropout': 0.5, 'lr': 0.001}: macro-F1 0.660 +/- 0.035 hazard-recall 0.682  (65s)
+   CNN {'width': 32, 'dropout': 0.5, 'lr': 0.003}: macro-F1 0.652 +/- 0.020 hazard-recall 0.661  (61s)
+   CNN best: {'width': 16, 'dropout': 0.5, 'lr': 0.003}
+[6] model selected on VALIDATION macro-F1: CNN
+[8] robustness check: grouped 5-fold CV over all sessions
+[9] leakage demonstration:
+                                                 features                        protocol  macro_f1  hazard_recall  accuracy
+              engineered features (used in this project)      naive random folds (LEAKY)     0.740          0.797     0.818
+              engineered features (used in this project) session-grouped folds (correct)     0.652          0.697     0.755
+engineered + raw orientation (heading leaks the session)      naive random folds (LEAKY)     0.874          0.868     0.896
+engineered + raw orientation (heading leaks the session) session-grouped folds (correct)     0.648          0.651     0.764
+
+=== GOAL CHECK (selected model on held-out TEST sessions) ===
+  CNN [argmax rule] hazard recall 0.781 (goal >= 0.9: NOT met) | macro-F1 0.473 (goal >= 0.8: NOT met)
+  CNN [safety rule ] hazard recall 0.874 (goal >= 0.9: NOT met) | macro-F1 0.410 (goal >= 0.8: NOT met)
+
+Done in 14.4 min. See /home/claude/terrain_rover_project/outputs

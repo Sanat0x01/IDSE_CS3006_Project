@@ -1,0 +1,16 @@
+{
+  "LogReg": {
+    "clf__C": 0.1
+  },
+  "RandomForest": {
+    "n_estimators": 200,
+    "min_samples_leaf": 3,
+    "max_features": 0.2,
+    "max_depth": 8
+  },
+  "CNN": {
+    "width": 16,
+    "dropout": 0.3,
+    "lr": 0.003
+  }
+}

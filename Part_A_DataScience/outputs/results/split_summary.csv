@@ -1,0 +1,4 @@
+,windows,sessions,Firm windows,Compliant windows,Irregular windows,Firm sessions,Compliant sessions,Irregular sessions
+train,2311,43,1374,731,206,26,14,3
+val,743,15,455,243,45,9,5,1
+test,756,15,455,244,57,9,5,1

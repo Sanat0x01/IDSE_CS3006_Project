@@ -1,0 +1,9 @@
+# Compatible ranges (Python 3.10+). Exact versions used for the reported results: requirements-tested.txt
+numpy>=1.26
+pandas>=2.1
+scipy>=1.11
+scikit-learn>=1.4
+matplotlib>=3.8
+seaborn>=0.13
+torch>=2.2
+joblib>=1.3
