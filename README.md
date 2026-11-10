@@ -22,13 +22,12 @@ This repository contains our final submission for the CS3006 IDSE course. The pr
 
 ```text
 IDSE_CS3006_Project/
-│
-├── docs/                                 # Final compiled PDFs
-│   ├── Rover_Project_Report.pdf          # Detailed academic report (Part A)
-│   └── Rover_Presentation.pdf            # Slide deck for project viva
-│
+|
 ├── Part_A_DataScience/                   # The ML Pipeline
-│   ├── data/                             # Dataset (auto-downloads from Kaggle mirror)
+    ├── docs/                                 # Final compiled PDFs
+│       ├── Rover_Project_Report.pdf          # Detailed academic report (Part A)
+│       └── Rover_Presentation.pdf            # Slide deck for project viva
+└   ├── data/                             # Dataset (auto-downloads from Kaggle mirror)
 │   ├── outputs/                          # Generated figures, CSV metrics, and logs
 │   ├── run_pipeline.py                   # Main orchestration script
 │   ├── config.py, data.py, eda.py        # Config, data loading/cleaning, and EDA
