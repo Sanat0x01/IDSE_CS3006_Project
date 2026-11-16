@@ -2,7 +2,7 @@
 The Overfitting Rover  -  an interactive game that teaches the Bias-Variance Tradeoff.
 
 Course : CS3006 Introduction to Data Science for Engineers
-Authors: Sanat (EC24B1069) and Rahul Ambawat (EC24B1088)
+Authors: Sanat (EC24B1069), Rahul Ambawat (EC24B1088) and Vishwajeet Kumar(EC24I2019)
 
 Run with:  streamlit run app.py
 """
