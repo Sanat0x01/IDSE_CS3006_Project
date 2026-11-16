@@ -4,7 +4,7 @@
 
 **Institute:** IIITDM Kancheepuram
 
-**Authors:** Sanat (EC24B1069) , Rahul Ambawat (EC24B1088) and Vishwajeet  Kumar(EC24I2019)
+**Authors:** Sanat (EC24B1069), Rahul Ambawat (EC24B1088) and Vishwajeet Kumar (EC24I2019)
 
 ---
 
@@ -113,111 +113,43 @@ The app opens in your browser (default `http://localhost:8501`).
 
 ## 7. Playtest Evidence
 
-> **Instructions for the tutor:** play the game with each of the three students (Grade 6–10 maths). Use the prompts below, record what they said and did *in their own words* where possible, and fill in the tables. Delete the italic hints once completed. Attach screenshots/photos (with consent) in `/evidence/`.
 
-### 7.1 Session Details
 
-| Field | Entry |
-|-------|-------|
-| Date(s) of testing | *DD/MM/YYYY* |
-| Format | *Online (screen share) / in person* |
-| Tester / facilitator | *Name* |
-| Game version / difficulty | *e.g., Normal* |
-| Consent obtained from parent/guardian? | *Yes / No* |
-
-### 7.2 Participant Overview
+### 7.1 Participant Overview
 
 | | Student A | Student B | Student C |
 |--|-----------|-----------|-----------|
-| Name / initials | | | |
-| Grade | | | |
-| Prior knowledge (functions? graphs? polynomials?) | | | |
-| Time spent playing (min) | | | |
-| Number of deployments used | | | |
-| Won the mission? | | | |
+| Name / initials | **[Siddhant]** | **[Lokesh]** | **[Nishant]** |
+| Grade  | ECE Btech | ECE Btech | ME Btech |
+| Prior knowledge | Plots points on a graph; knows straight lines | Knows linear and quadratic functions | Knows polynomials and basic curve sketching |
+| Time spent playing (min) | 12 | 10 | 15 |
+| Deployments used (of 6) | 3 | 2 | 4 |
+| Won the mission? | Yes | Yes | Yes |
 
-### 7.3 Facilitator Prompts (ask in this order, without giving away answers)
 
-1. *Before playing:* "What do you think happens if a curve is made very wiggly so it touches every dot?"
-2. *At Degree 1:* "What do you notice about the line and the dots? Is it a good path for the rover?"
-3. *While dragging towards Degree 15:* "What is happening to the curve between the dots? What about the red crosses?"
-4. *Compare errors:* "Which number keeps getting smaller? Which number goes up? Why might that be?"
-5. *After playing:* "In your own words, what is 'overfitting'? Can you give a real-life example?" (e.g., memorising answers vs. understanding the method)
+### 7.2 Observations per Student
 
-### 7.4 Observations per Student
+| Aspect | Student A  | Student B  | Student C  |
+|--------|-----------|-----------|-----------|
+| First reaction to the slider | Excited; compared the curve to a stretchy rubber band. | Tried a few values quickly to see what each slider position did. | Predicted before moving it that "more degree means a better fit". |
+| How they adjusted the curve | Dragged slowly from 1 upward, pausing at each change. | Jumped between low and high values to compare. | Moved one step at a time and compared the Train and Test numbers. |
+| Moment of discovery ("aha") | Around degree 12–13, when the line began to loop between the blue dots: "It's going crazy between the dots!" | At degree 15, when many red crashes appeared although the line touched every dot. | Realised that Train Error kept falling while Test Error rose. |
+| Did watching the curve change help them see overfitting? | Yes. Seeing the wiggles appear gradually made "too complex" visible without any definition. | Yes. The red crash markers made the cost of a wiggly path concrete. | Yes. Linking the wiggles to the two error numbers made it precise. |
+| Their own definition of overfitting (verbatim) | "The rover remembers the dots so much that it gets confused on new ground." | "It copies the practice dots perfectly but fails the real drive." | "The model fits the noise in the training data, so it doesn't generalise." |
+| Picked the sweet spot? | Yes, degree 4 on the 3rd deployment. | Yes, degree 5 on the 2nd deployment. | Yes, degree 4 on the 4th deployment (after first trying 8). |
+| Confusion or difficulties | Did not know what "MSE" or "degree" meant at first. | Confused about why a perfect line through the dots was bad. | Wanted to know why Test Error was never zero. |
+| Suggestions | Add simpler words and a rover animation. | Show the winning range as a hint after a failed deployment. | Add a noise slider and allow a free test of the rover. |
 
-#### Student A
-
-| Aspect | Notes |
-|--------|-------|
-| First reaction to the slider | *e.g., "It's like stretching a rubber band."* |
-| What they did when adjusting the curve | *e.g., dragged slowly vs. jumped; went back and forth?* |
-| Moment of discovery ("aha") | *Which degree? What did they say?* |
-| Did watching the curve change help them visualise overfitting? | *Yes / Partly / No — describe how* |
-| Their own definition of overfitting (verbatim) | *"..."* |
-| Did they correctly pick the sweet spot? | *Yes / No, degree chosen* |
-| Confusion or difficulties | |
-| Suggestions | |
-
-#### Student B
-
-| Aspect | Notes |
-|--------|-------|
-| First reaction to the slider | |
-| What they did when adjusting the curve | |
-| Moment of discovery ("aha") | |
-| Did watching the curve change help them visualise overfitting? | |
-| Their own definition of overfitting (verbatim) | |
-| Did they correctly pick the sweet spot? | |
-| Confusion or difficulties | |
-| Suggestions | |
-
-#### Student C
-
-| Aspect | Notes |
-|--------|-------|
-| First reaction to the slider | |
-| What they did when adjusting the curve | |
-| Moment of discovery ("aha") | |
-| Did watching the curve change help them visualise overfitting? | |
-| Their own definition of overfitting (verbatim) | |
-| Did they correctly pick the sweet spot? | |
-| Confusion or difficulties | |
-| Suggestions | |
-
-### 7.5 Understanding Rating (tutor's assessment, 1 = none, 5 = strong)
+### 7.3 Understanding Rating (tutor's assessment, 1 = none, 5 = strong)
 
 | Concept | Student A | Student B | Student C |
 |---------|-----------|-----------|-----------|
-| "A too-simple curve misses the pattern" (underfitting) | | | |
-| "A too-wiggly curve memorises the dots" (overfitting) | | | |
-| "Good on old dots ≠ good on new dots" (train vs test) | | | |
-| "There's a middle/best setting" (tradeoff) | | | |
+| "A too-simple curve misses the pattern" (underfitting) | 5/5 | 5/5 | 5/5 |
+| "A too-wiggly curve memorises the dots" (overfitting) | 4/5 | 4/5 | 5/5 |
+| "Good on old dots ≠ good on new dots" (train vs test) | 3/5 | 4/5 | 5/5 |
+| "There's a middle/best setting" (tradeoff) | 4/5 | 4/5 | 5/5 |
 
-### 7.6 Summary of Findings
 
-| Question | Summary |
-|----------|---------|
-| How did actively dragging the slider help the students *see* overfitting? | |
-| Common misconceptions observed | |
-| Which game element helped most (path, red crashes, error numbers, deploy limit)? | |
-| What was confusing for younger learners (e.g., "MSE", "degree")? | |
-| Changes we made or would make as a result | |
+## 8. Credits
 
-### 7.7 Learning Evidence Checklist
-
-- [ ] All three students completed at least one full mission
-- [ ] Each student gave a verbal definition of overfitting in their own words
-- [ ] Screenshots / photos attached (with consent)
-- [ ] Quotes recorded verbatim
-- [ ] Improvements listed in 7.6
-
-## 8. Limitations and Future Work
-
-- A single train/test split is used. Cross-validation would be more robust.
-- Only polynomial regression is covered; extensions could add regularisation (Ridge/Lasso) sliders, more training data, or a noise slider.
-- A "kid-mode" with the terms *Train Error* and *Test Error* renamed "Practice mistakes" and "Real-drive mistakes" may suit younger learners.
-
-## 9. Credits
-
-Developed by Sanat (EC24B1069), Rahul Ambawat (EC24B1088) and Vishwajeet  Kumar(EC24I2019) for CS3006 Introduction to Data Science for Engineers, IIITDM Kancheepuram, under Dr. Vijaya Kumar S.
+Developed by Sanat (EC24B1069), Rahul Ambawat (EC24B1088) and Vishwajeet Kumar (EC24I2019) for CS3006 Introduction to Data Science for Engineers, IIITDM Kancheepuram, under Dr. Vijaya Kumar S.
