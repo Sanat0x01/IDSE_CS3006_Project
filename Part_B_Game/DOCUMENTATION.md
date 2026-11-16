@@ -1,6 +1,9 @@
 **Course:** CS3006 Introduction to Data Science for Engineers
+
 **Professor:** Dr. Vijaya Kumar S
+
 **Institute:** IIITDM Kancheepuram
+
 **Authors:** Sanat (EC24B1069) , Rahul Ambawat (EC24B1088) and Vishwajeet  Kumar(EC24I2019)
 
 ---
