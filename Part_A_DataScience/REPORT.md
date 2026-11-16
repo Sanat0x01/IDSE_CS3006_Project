@@ -1,6 +1,6 @@
 # Terrain-Risk Classification for Autonomous Rovers from IMU Time Series
 
-*Project report (presentation + viva). All numbers below were produced by `python run_pipeline.py` (seed 42, CPU, library versions in `requirements-tested.txt`). The same run repeated twice gave identical metrics (maximum difference 0.0). Machine-written tables are in `outputs/results/results_summary.md`; figures are in `outputs/figures/`.*
+*Project report. All numbers below were produced by `python run_pipeline.py` (seed 42, CPU, library versions in `requirements-tested.txt`). The same run repeated twice gave identical metrics (maximum difference 0.0). Machine-written tables are in `outputs/results/results_summary.md`; figures are in `outputs/figures/`.*
 
 ---
 
@@ -258,49 +258,5 @@ pip install -r requirements.txt
 python run_pipeline.py
 ```
 
-Caveat: other hardware or library versions can change the last decimals (especially the CNN).
-
 ---
 
-## 6. Presentation and viva cheat-sheet
-
-**Storyline (6 slides):** (1) problem and risk tiers; (2) dataset and why session-level splitting; (3) leakage demonstration, Figure 12; (4) EDA: physics of vibration, Figures 3 to 5; (5) results vs goals, Figures 8 and 9; (6) error analysis, limitations, next steps.
-
-**Leakage demonstration (`fig12_leakage_demo.png`, Random Forest, 5-fold CV over all windows):**
-
-| Features | Random folds (leaky) macro-F1 | Session-grouped folds macro-F1 |
-|---|---|---|
-| Engineered (used here) | 0.740 | 0.652 |
-| Engineered + raw orientation | **0.874** | 0.648 |
-
-**Likely viva questions**
-
-* *Why not accuracy?* Firm is 60 % of the data; a model that always says "Firm" would score high accuracy and miss every hazard.
-* *Why group the split by session?* Windows from one session are slices of one drive; mixing them lets the model recognise the session. Figure 12 quantifies it (0.87 vs 0.65).
-* *Why drop the quaternion?* It contains heading, 75 % session-only variance (Figure 5); I use gravity direction (tilt) instead.
-* *Why did you not delete outliers?* Spikes are signal (impacts); windows must stay 128 long; winsorising bounds are fitted on train.
-* *You did not meet your goals. Is the project a failure?* The goals were set before experiments and are reported as not met. The evidence shows why: session-to-session variation, a one-session Irregular tier, and a label proxy that an IMU cannot fully see. Reporting that honestly is the result.
-* *Why is the CNN not better than the Random Forest?* 2.3k windows from 43 sessions: the CNN overfits its sessions (validation loss rises while training loss falls).
-* *Why is hazard recall of the safety rule different on test from validation?* The threshold was tuned on 15 validation sessions with one Irregular session; it does not transfer exactly.
-* *What would you do with more time?* Leave-one-session-out CV, session normalisation, stall labels from motor current, outdoor data.
-
----
-
-## 7. Rubric checklist (where each item lives)
-
-| Rubric item | Location |
-|---|---|
-| Clear problem, measurable goals | §1.1, §1.2 |
-| Dataset loading code, justification (non-toy, size, relevance) | §1.3, §1.4, `data.py` |
-| Missing / outliers / duplicates / dtypes with reasoning | §2.1, `data.validate_and_clean` |
-| Feature engineering (rolling means etc.) | §2.2, `features.py` |
-| ≥ 3 plots with interpretation | §2.3 (six plots), `eda.py` |
-| Strict train/val/test, no leakage | §3.1, `data.make_group_splits` |
-| Baseline + Random Forest + PyTorch NN | §3.2, `models.py` |
-| Cross-validation + tuning with justification | §3.3 |
-| Suitable metrics justified by risk | §4.1, `evaluate.py` |
-| Model comparison | §4.2 |
-| Error analysis | §4.4 |
-| Limitations, biases, next steps | §4.5, §4.6 |
-| Seeds, requirements, clean runnable code | §5, `requirements*.txt`, `run_pipeline.py` |
-| Structured report for presentation/viva | this file, §0 and §6 |
